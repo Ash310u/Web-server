@@ -29,7 +29,7 @@ myWeather.addEventListener('click', () => {
         humidity.innerHTML = ``;
 
 
-        fetch(`https://ash-web-server.onrender.com?address=${latitude},${longitude}`).then((response) => {
+        fetch(`https://ash-web-server.onrender.com/weather?address=${latitude},${longitude}`).then((response) => {
             response.json().then((data) => {
                 if (data.error) {
                     msg.innerHTML = data.error;
