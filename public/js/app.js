@@ -59,7 +59,7 @@ weatherForm.addEventListener('submit', (e) => {
     time.innerHTML = ``;
     humidity.innerHTML = ``;
 
-    fetch(`https://ash-forecast.cyclic.app/weather?address=${location}`).then((response) => {
+    fetch(`https://ash-web-server.onrender.com/weather?address=${location}`).then((response) => {
         response.json().then((data) => {
             if (data.error) {
                 msg.innerHTML = data.error;
