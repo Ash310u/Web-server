@@ -1,7 +1,7 @@
 const request = require("postman-request");
 
 const geocode = (address, callback) => {
-    const GeocodeURL = `https://us1.locationiq.com/v1/search?key=pk.bbb941e8068fd9d57e6f8705a6c4d8ec&format=json&q=${encodeURIComponent(address)}&limit=1`;
+    const GeocodeURL = `https://us1.locationiq.com/v1/search?key=${process.env.GEOCODE_API_KEY}&format=json&q=${encodeURIComponent(address)}&limit=1`;
 
     request({ url: GeocodeURL, json: true }, (error, {body}) => {
         if (error) {
